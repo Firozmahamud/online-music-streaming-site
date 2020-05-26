@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Panel</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script language="Javascript" async>
+			function showData(testOb){
+				 let data = "";
+				 data += "<table border='1'>";
+				 data += "<tr>";
+				 data += "<th>User ID</th>";
+				 data += "<th>Username</th>";
+				 data += "<th>Password</th>";
+				 data += "<th>Delete/Update</th>";
+				 data += "</tr>";
+
+				for (i in testOb) {
+				 	data += "<tr>";
+				 	data += "<td>"+testOb[i].ID+"</td>";
+				 	data += "<td>"+testOb[i].Username+"</td>";
+				 	data += "<td>"+testOb[i].Password+"</td>";
+				 	data += "<td>"+'<input type = "button" id = "show" onclick="deleteUser('+testOb[i].ID+')" value="Delete"/></td>';
+				 	data += "</tr>";
+				 }
+				 data += "</table>";
+				 return data;
+			}
+			function showUser(){
+				//alert("Name must be filled out");
+				let xhttp;
+				//document.getElementById("txtInfo").innerHTML = '<img src="loader.gif" /> ';
+				let url = "admin.php";
+				//let param = "d=" + str;
+				let method = "POST";
+				let testAsync = true; 
+				xhttp = new XMLHttpRequest();
+				xhttp.open(method,url,testAsync);
+				xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+				xhttp.onreadystatechange = function (){
+					//document.getElementById("about").innerHTML= this.readyState;
+					//document.getElementById("about2").innerHTML= this.statusText;
+					//alert("Name must be filled out");
+
+				if(this.readyState == 4 && this.statusText == "OK"){
+					//let aba = JSON.stringify(this.responseText);
+					//aba = aba.replace(/^\s+|\s+$/g, "");
+					let jsOB = JSON.parse(this.responseText);;
+					document.getElementById("txtInfo").innerHTML = showData(jsOB);
+					//document.getElementById("txtInfo").innerHTML = jsOB;
+
+
+				}
+				};
+				xhttp.send();
+			}
+
+			function deleteUser(id){
+				alert("Are you sure?");
+				$.ajax({
+				  url: "delete.php",
+				  type: "get",
+				  data: { 
+				    userid: id, 
+				    
+				  },
+				  success: function(response) {
+				    	alert("Done");
+				    	showUser();
+				  },
+				  error: function(xhr) {
+				    	alert("Error");
+				  }
+				});
+
+			}
+		</script>
+</head>
+<body>
+	<input type = "button" id = "show" onclick="showUser()" value="show user"/>
+		<p id= "txtInfo"> </p>
+</body>
+</html>

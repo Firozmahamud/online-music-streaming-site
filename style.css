@@ -1,0 +1,346 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+.middle{
+  position: absolute;
+  top: 80%;
+  transform: translateY(-50%);
+  width: 60%;
+  text-align: center;
+}
+.f{
+	 position: absolute;
+  top: 80%;
+}
+.btn{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background:rgba(0,0,0,0.8)
+  
+  margin: 10px;
+  border-radius: 40%;
+  box-shadow: 0 px 5px -5px #00000070;
+  color: #3498db;
+  overflow: hidden;
+  position: relative;
+}
+.btn i{
+  line-height: 60px;
+  font-size: 26px;
+  transition: 0.2s linear;
+}
+.btn:hover i{
+  transform: scale(1.3);
+  color: #f1f1f1;
+}
+.btn::before{
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: #3498db;
+  transform: rotate(45deg);
+  left: -110%;
+  top: 90%;
+}
+.btn:hover::before{
+  animation: aaa 0.7s 1;
+  top: -10%;
+  left: -10%;
+}
+@keyframes aaa {
+  0%{
+    left: -110%;
+    top: 90%;
+  }50%{
+    left: 10%;
+    top: -30%;
+  }100%{
+    top: -10%;
+    left: -10%;
+  }
+}
+
+
+
+
+
+.menu-area li a {
+  text-decoration: none;
+}
+
+.menu-area li {
+  list-style-type: none;
+}
+
+.custom-padding{
+  padding-top: 25px;
+}
+
+
+.logo {
+  width: 15%;
+  float: left;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 25px;
+  text-align: left;
+  padding-left: 2%;
+}
+
+.menu-area li {
+  display: inline-block;
+}
+
+.menu-area a {
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  padding: 0 25px;
+  font-size: 14px;
+  line-height: 30px;
+  position: relative;
+  z-index: 1;
+}
+.menu-area a:hover {
+  background: tomato;
+  color: #fff;
+}
+
+.menu-area a:hover:after {
+  transform: translateY(-50%) rotate(-35deg);
+}
+
+nav:before {
+  position: absolute;
+  content: '';
+  border-top: 10px solid #333;
+  border-right: 10px solid #333;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  top: 100%;
+  left: 0;
+}
+
+nav:after {
+  position: absolute;
+  content: '';
+  border-top: 10px solid #333;
+  border-left: 10px solid #333;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  top: 100%;
+  right: 0;
+}
+
+
+
+body 
+{
+ margin: 0;
+ padding: 0; 
+ background: #e84118; 
+ align-items: right;
+ } 
+ .search-box 
+ {
+  position: absolute; 
+  top: 10%; 
+  left: 50%; 
+  transform: translate(-95%, -30%); 
+  background: #2f3640; 
+  height: 40px; 
+  border-radius: 30px; 
+  } 
+  .search-box:hover > .search-txt 
+  { 
+	  width: 440px; 
+	 
+   } 
+   .search-box:hover > .search-btn 
+   {
+    background: white; 
+    color: black; 
+    } 
+    .search-btn 
+    { 
+	    color: #e84118;
+	     float: right; 
+	     width: 40px; 
+	     height: 40px; 
+	     border-radius: 50%; 
+	     background: #2f3640; 
+	     display: flex; 
+	     justify-content: center; 
+	     align-items: center; 
+	     transition: 0.4s; 
+	     color: white; 
+	     cursor: pointer; 
+	   } 
+	   .search-btn > i 
+	   { 
+		   font-size: 30px; 
+		} 
+		.search-txt 
+		{
+		 border: none; 
+		 background: none; 
+		 outline: none; 
+		 float: left; 
+		 padding: 0; 
+		 color: white; 
+		 font-size: 16px; 
+		 transition: 0.4s; 
+		 line-height: 40px; 
+		 width: 0px; 
+		 font-weight: bold; 
+		}
+
+
+.p
+{
+  top: -5px;
+ left: -5px;
+ right: -5px;
+ bottom: -5px;
+ z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+body
+{
+	
+	margin:0;
+	padding:0;
+	background:url("background.jpg");
+	background-size:cover;
+	font-family: sans-serif; 
+}
+
+.loginBox
+{
+	position:absolute;
+	top:50%;
+	left:40%;
+	transform: translate(-50%, -50%);
+	width:350px;
+	height:420px;
+	padding:80px 40px;
+	box-sizing: border-box;
+	background:rgba(0,0,0,0.5) ;
+	
+}
+
+
+
+h2
+{
+	margin:0;
+	padding:0 0 20px;
+	color:#1E90FF;
+	text-align:center;
+} 
+h1
+{
+	margin:10;
+	padding:0 0 20px;
+	color:#1E90FF;
+	text-align:right;
+} 
+
+
+
+.loginBox p
+{
+	padding:0;
+	margin:0;
+	font-weight:bold;
+	color:#fff;
+	
+} 
+
+
+.loginBox input
+{
+	width:100%;
+	margin-bottom: 20px; 
+}
+
+.loginBox input[type="text"], .loginBox input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size: 16px;
+	
+	
+}
+
+
+.loginBox input[type="submit"]
+{
+	border:none;
+	outline:none;
+	height: 40px;
+	color:#fff;
+	font-size:16px;
+	background: rgb(255,38,126);
+	cursor:pointer;
+	border-radius:20px;
+}
+
+
+.loginBox input[type="submit"]:hover
+{
+	background: #efed40;
+	color: #262626;
+}
+ 
+ 
+ 
+
+.loginBox a
+{
+	color: #fff;
+	font-size:14px;
+	font-weight:bold;
+} 
+
+
+::placeholder
+{
+	color:rgba(255,255,255,0.5); 
+}
+
+
+.user
+{
+	width:100px;
+	height:100px; 
+	overflow:hidden;
+	position:absolute;
+	top:calc(-100px/2);
+	left:calc(50% - 50px);
+	border-radius:50%;
+}
+ 
+

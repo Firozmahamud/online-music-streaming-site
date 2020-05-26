@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+	<link rel="stylesheet" href="style.css">
+    <link href="Main.css" rel="stylesheet"/>
+
+<script>
+	function validateForm() 
+	{
+
+  		var x = document.forms["signupForm"]["username"].value;
+  		var y = document.forms["signupForm"]["password"].value;
+  		var z = document.forms["signupForm"]["againpassword"].value;
+  		var usernameRegex = /^[a-zA-Z0-9]+$/;
+  		var validUsername = x.match(usernameRegex);
+
+  		if(x == "")
+  		{
+  			alert("Name must be filled out");
+  			document.forms["signupForm"]["username"].focus();
+    		return false;
+  		}
+
+  		if(y == "")
+  		{
+  			alert("Password must be filled out");
+  			document.forms["signupForm"]["password"].focus();
+    		return false;
+  		}
+  		if(z == "")
+  		{
+  			alert("Please re-write password");
+  			document.forms["signupForm"]["againpassword"].focus();
+    		return false;
+  		}
+  		if(y !== z)
+  		{
+  			alert("Password Does Not Match");
+  			document.forms["signupForm"]["password"].focus();
+    		return false;
+  		}
+
+  		
+    	if(validUsername == null)
+    	{
+        	alert("Your Username is not valid. Only characters A-Z, a-z, 0-9 and '-' are  acceptable.");
+        	document.forms["signupForm"]["username"].focus();
+        	return false;
+    	}
+    	return true;
+	}
+</script>
+
+</head>
+
+<style>
+    
+        *{
+		margin: 0;
+		padding: 0;
+		 box-sizing: border-box;
+		}
+        body
+		{
+		margin:0;
+	padding:0;
+	background:url("background.jpg");
+	background-size:cover;
+	font-family: sans-serif; 
+		}
+        
+        .form-wrap
+		{
+		position:absolute;
+	top:50%;
+	left:40%;
+	transform: translate(-50%, -50%);
+	width:350px;
+	height:500px;
+	padding:80px 40px;
+	box-sizing: border-box;
+	background:rgba(0,0,0,0.5) ;
+		}
+        h1
+		{
+		text-align: center; 
+		color: #fff; 
+		font-weight: normal; 
+		margin-bottom: 20px;
+		}
+		h2
+		{
+		text-align: center; 
+		color: #fff; 
+		font-size: 16px;
+		}
+        
+        input
+		{
+		width: 100%; 
+		background: none; 
+		border: 1px solid #fff; 
+		border-radius: 3px; 
+		padding: 6px 15px; 
+		box-sizing: border-box; 
+		margin-bottom: 20px; 
+		font-size: 16px; 
+		color: #fff;
+		}
+        
+        input[type="button"]
+        { 
+	       
+	border:none;
+	outline:none;
+	height: 40px;
+	color:#fff;
+	font-size:16px;
+	background: rgb(255,38,126);
+	cursor:pointer;
+	border-radius:20px;
+	   }
+        input[type="button"]:hover
+        {
+        background: #efed40;
+	color: #262626;
+      }
+        
+        ::placeholder
+        {
+	       color:rgba(255,255,255,0.5); 
+	    }
+    
+    </style>
+
+<body>
+	<div class="form-wrap">
+		<form name="signupForm" action="registration.php" onsubmit="return validateForm()" method="post">
+			<h1>Sign Up</h1>
+
+            <input type="text" name="username" placeholder="user name">
+            <input type="password" name="password" placeholder="password">
+            <input type="password" name="againpassword" placeholder="type password again">
+                
+            <input type="submit" name = "RegBtn" value="Sign Up">
+
+           <h2> already a user ?<a href="login.html"> login </a> </h2>
+            </form>
+    </div>       
+</body>
+</html>
